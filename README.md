@@ -1,0 +1,3 @@
+备份数据库时报错，修改php配置文件php.ini，把display_errors设置为off就可以解决
+
+安装报错，修改php配置文件php.ini，把short_open_tag 设置为On就可以解决

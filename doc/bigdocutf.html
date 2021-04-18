@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>智安云備份說明文檔</title>
+<link href="../images/css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="99%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#0472BC">
+  <tr>
+    <td height="25"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="50%"><strong><font color="#FFFFFF">智安云備份系統(CloudBAK)說明文檔</font></strong></td>
+          <td width="50%"><div align="right"><font color="#FFFFFF">Language: </font>
+              <select name="select" onchange="self.location.href=this.value;" style="width:300">
+                <option value='docutf.html'>Chinese simplified (utf-8)</option>
+                <option value='bigdocutf.html' selected>Chinese traditional (utf-8)</option>
+              </select>
+            </div></td>
+        </tr>
+      </table>      </td>
+  </tr>
+<!--  <tr>-->
+<!--    <td height="25" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="1" cellpadding="3">-->
+<!--        <tr>-->
+<!--          <td width="10%" height="30" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">-->
+<!--            <div align="center"><a href="#aboutebak">關於備份王</a></div></td>-->
+<!--          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">-->
+<!--<div align="center"><a href="#ebak">系統特性</a></div></td>-->
+<!--          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">-->
+<!--<div align="center"><a href="#hj">運行環境</a></div></td>-->
+<!--          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">-->
+<!--<div align="center"><a href="#setup">安裝說明</a></div></td>-->
+<!--          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">-->
+<!--<div align="center"><a href="#usebak">使用說明</a></div></td>-->
+<!--<td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">-->
+<!--<div align="center"><a href="#question">常見問題</a></div></td>-->
+<!--          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'"><div align="center"><a href="#mustdobak">注意事項</a></div></td>-->
+<!--		  <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'"><div align="center"><a href="#ebma" title="CloudBAK+phpMyAdmin+高安全"><font color="#ff0000"><strong>CBMA系統</strong></font></a></div></td>-->
+<!--&lt;!&ndash;		  <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">&ndash;&gt;-->
+<!--&lt;!&ndash;<div align="center"><a href="http://bbs.phome.net/ListThread?forumid=27" target="_blank">技術支持</a></div></td>&ndash;&gt;-->
+<!--&lt;!&ndash;          <td width="10%" onmouseover="this.style.backgroundColor='#DBEAF5'" onmouseout="this.style.backgroundColor='#ffffff'">&ndash;&gt;-->
+<!--&lt;!&ndash;<div align="center"><a href="http://www.phome.net/service/xuke.html" target="_blank">許可協議</a></div></td>&ndash;&gt;-->
+<!--        </tr>-->
+<!--      </table></td>-->
+<!--  </tr>-->
+  <tr>
+    <td bgcolor="#FFFFFF"><table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="aboutebak">
+        <tr>
+          <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">智安云備份系統(CloudBAK)簡介</font></strong></td>
+        </tr>
+        <tr>
+          <td height="22">智安云備份(EmpireBak)是一款專門為Mysql大數據的備份與導入而設計的軟件,系統採用分卷備份與導入,理論上可備份任何大小的數據庫.</td>
+        </tr>
+      </table>
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="ebak">
+        <tr>
+          <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">一、系統特性</font></strong></td>
+        </tr>
+        <tr>
+          <td height="30"><strong><font color="#0000FF">(一)、智安云備份解決MYSQL備份三大難題</font></strong></td>
+        </tr>
+        <tr>
+          <td height="22">1、解決備份大數據問題，採用分組備份，備份穩定高效；</td>
+        </tr>
+        <tr>
+          <td height="22">2、解決備份數據編碼亂碼問題，備份王智能識別編碼；</td>
+        </tr>
+        <tr>
+          <td height="22">3、解決不同MYSQL版本數據不能互導問題，通過備份王不存在數據版本區別。</td>
+        </tr>
+        <tr>
+          <td height="30"><strong><font color="#0000FF">(二)、主要特性</font></strong></td>
+        </tr>
+        <tr>
+          <td height="22"><strong>1、分組備份</strong></td>
+        </tr>
+        <tr>
+          <td height="22"> <table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr>
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>採用分組備份，系統自動將數據庫分成多部分導出導入．理論上不限數據庫大小，均可備份與恢復；<br>
+                  支持按「文件大小」與「記錄數」兩種分組備份方式，特別是針對大數據庫而設計的「按記錄數」備份算法，效率極高；<br>
+                  每組備份數據大小後台直接設置，依服務器配置自已設定。</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="22"><strong>2、不同MYSQL版本數據可直接備份與恢復</strong></td>
+        </tr>
+        <tr>
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr>
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'><p>系統自動識別MYSQL版本格式，然後進行轉換恢復；<br>
+                    不同編碼數據庫之間可直接備份與恢復，系統自動識別數據編碼；<br>
+                    系統支持完整備份，即使備份與恢復兩個數據表結構不一致，也可備份與恢復；<br>
+                    支持數據表編碼轉換；<br>
+                    支持正常數據與十六進制數據備份。<br>
+                    支持mysql和mysqli兩種接口類型鏈接數據庫。<br>
+                  </p></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="22"><strong>3、安全性</strong></td>
+        </tr>
+        <tr>
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr>
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>備份文件均生成*.php文件，並且採用登錄驗證，只有登錄的管理員才能進行數據恢復；<br>
+                  備份目錄、壓縮目錄可自定義；<br>
+                  支持密碼與認證碼雙重密碼登錄驗證；<br>
+                  登錄支持驗證碼驗證，採用過期時間+加密字符驗證，有效防止暴力提交表單；<br>
+                  第一重安全驗證：登錄隨機驗證碼加密驗證；<br>
+                  第二重安全驗證：隨機變量名+隨機驗證字符，無規律可尋，並且後台無法查看，必須進入FTP查看配置文件內容，高安全性；<br>
+                  第三重通用性安全驗證：給整合程序增加第三重驗證，驗證字符由系統隨機生成，並且後台無法查看，必須進入FTP查看配置文件內容，高安全性；<br>
+                  第四重安全驗證：支持瀏覽器USER-AGENT驗證功能，只有包含指定信息的瀏覽器才可以訪問後台，也就是說可以指定某一台機器才能訪問後台；<br>
+                  安裝目錄可任意自定義；<br>
+                  管理員登錄驗證COOKIE變量前綴後台直接設置。</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="22"><strong>4、使用方便</strong></td>
+        </tr>
+        <tr>
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr>
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>備份參數可保存，待以後使用時選擇，無需重複設置；<br>
+                  備份目錄直接後台管理(打包下載/刪除)，支持在線壓縮下載與FTP直接下載；<br>
+                  備份設置與備份目錄管理，並可直接轉向數據備份與恢復頁面，很人性化；<br>
+                  在線建立、刪除數據庫，優化、修復、清空、刪除數據表、批量替換表名，查看表字段等功能，管理數據很方便；<br>
+                  在線執行SQL、導入*.sql文件，方便操作數據；<br>
+                  支持批量替換備份目錄文件內容，非常方便的文本替換功能；<br>
+                  可隨時關閉與啟用系統使用。</td>
+              </tr>
+            </table></td>
+        </tr>
+		<tr>
+          <td height="22"><strong>5、多MYSQL服務器支持</strong></td>
+        </tr>
+        <tr>
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr>
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>支持一個後台對多台MYSQL數據庫服務器的數據進行備份與恢復，後台管理可直接切換數據庫服務器。 </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="22"><strong>6、多語言</strong></td>
+        </tr>
+        <tr>
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr>
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>系統默認內置「簡體中文(utf-8)」、「繁體中文(utf-8)」。<br>
+                  用戶也可增加語言包，製作更多的語言支持。 </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="22"><strong>7、安裝/卸載簡單</strong></td>
+        </tr>
+        <tr>
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr>
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>安裝：上傳程序即可直接使用，數據庫參數可在線設置(HTTP)。<br>
+                  卸載：刪除程序目錄即可完全清除。</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td height="22"><strong>8、支持數據累加</strong></td>
+        </tr>
+        <tr>
+          <td height="22"><table border=0 width=100% cellspacing=1 cellpadding=10 bgcolor='#cccccc'>
+              <tr>
+                <td width='100%' bgcolor='#FFFFFF' style='word-break:break-all;line-height: 20px'>
+                  可設置是否增加遞增字段值，可以將本地數據累加到服務器數據庫上。</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="1" id="usebak">
+        <tr>
+          <td height="23" bgcolor="#DBEAF5"><strong><font color="#0000FF">二、使用說明</font></strong></td>
+        </tr>
+        <tr>
+          <td height="22">1．<strong>備份數據：</strong>後台 －＞備份數據 －＞ 選擇備份的數據庫 －＞ 選擇備份的表與設定備份參數
+            －＞ 備份完畢。</td>
+        </tr>
+        <tr>
+          <td height="22">2．<strong>恢復數據：</strong>後台 －＞恢復數據 －＞ 選擇恢復源目錄，數據庫 －＞ 恢復完畢。</td>
+        </tr>
+        <tr>
+          <td height="22">3．<strong>下載備份文件：</strong>FTP下載備份目錄下相應的備份目錄即可。默認的備份目錄為「bdata」。(對於文件少的也可直接到「管理備份目錄」打包下載)</td>
+        </tr>
+          <tr>
+              <td height="22">4．<strong>增加多DB服務器：</strong>點菜單“全局參數設置” －＞“多服務器設置” －＞ “增加服務器”：填寫數據庫服務器信息后點“設置”按鈕，增加后刷新界面即可看到服務器切換選項。</td>
+          </tr>
+      </table>
+
+  </tr>
+
+<!--  <tr>-->
+<!--    <td height="36" bgcolor="#FFFFFF">-->
+<!--      <div align="center">Powered By <a href="http://www.zhiannet.com" target="_blank"><strong>CloudBAK</strong></a></div></td>-->
+<!--  </tr>-->
+</table>
+</body>
+</html>
